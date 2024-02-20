@@ -41,3 +41,6 @@ for i in range(len(bin_result) // 11):
 
 print(" ".join(passphrase))
 print("passphrase count: "+str(len(passphrase)))
+
+# mnemonic output: husband slab custom rival kitchen become certain amazing primary stage spell main cattle satoshi warfare snap online sketch wrong render heavy wise globe barely
+# passphrase count: 24
