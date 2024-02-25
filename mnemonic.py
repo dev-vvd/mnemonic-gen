@@ -2,8 +2,12 @@ import binascii
 import hashlib
 import secrets
 
-# 1. Convert random bytes to hex
-# 2. Hex + hashed(hex)[:len(random_bytes) * 8 // 32]
+# 1. convert random bytes to hex.
+# 2. calculate the SHA-256 hash of the random bytes.
+# 3. bin(int(hex, 16))[2:].zfill(len(random_bytes) * 8) + bin(int(hashed_bytes, 16))[:len(random_bytes) * 8 // 32]
+# 4. split binary result in groups of 11 bits.
+# 5. convert every group of 11 bits to an int.
+# 6. iterate bip39 wordlist with int value as index.
 
 # random_bytes = secrets.token_bytes(16)
 random_bytes = b'o\xf9\\\xda]W\xb0\'\xc9h>\xaa\xba\x87D\xc3"E~\xfd\xc6j\x9a\xf9G\xfa\xdb\x06\xa7\xf8\xd8\xd0'
